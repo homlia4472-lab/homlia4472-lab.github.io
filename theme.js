@@ -6,12 +6,18 @@ function updateThemeButton() {
   if (!themeButton) return;
   const isLight = document.documentElement.dataset.theme === 'light';
   const labels = {
-    de: { light: '☀ Hell', dark: '☾ Dunkel', lightAction: 'Helles Farbschema wählen', darkAction: 'Dunkles Farbschema wählen' },
-    en: { light: '☀ Light', dark: '☾ Dark', lightAction: 'Use light theme', darkAction: 'Use dark theme' },
-    uk: { light: '☀ Світла', dark: '☾ Темна', lightAction: 'Увімкнути світлу тему', darkAction: 'Увімкнути темну тему' }
+    de: { light: 'Hell', dark: 'Dunkel', lightAction: 'Helles Farbschema wählen', darkAction: 'Dunkles Farbschema wählen' },
+    en: { light: 'Light', dark: 'Dark', lightAction: 'Use light theme', darkAction: 'Use dark theme' },
+    uk: { light: 'Світла', dark: 'Темна', lightAction: 'Увімкнути світлу тему', darkAction: 'Увімкнути темну тему' }
   };
   const label = labels[document.documentElement.lang] || labels.de;
-  themeButton.textContent = isLight ? label.dark : label.light;
+  const icon = document.createElement('span');
+  icon.setAttribute('aria-hidden', 'true');
+  icon.textContent = isLight ? '☾' : '☀';
+  const caption = document.createElement('span');
+  caption.className = 'theme-text';
+  caption.textContent = isLight ? label.dark : label.light;
+  themeButton.replaceChildren(icon, caption);
   themeButton.setAttribute('aria-label', isLight ? label.darkAction : label.lightAction);
   themeButton.setAttribute('aria-pressed', String(isLight));
 }
