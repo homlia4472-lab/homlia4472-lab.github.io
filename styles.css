@@ -167,3 +167,37 @@ body{
 .back-link:hover{background:var(--cyan);color:var(--bg);transform:translateY(-2px)}
 .back-link:focus-visible{outline:3px solid var(--text);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.back-link{transition:none}}
+
+/* Each language has its own URL; the selector keeps the current page. */
+.language-nav{
+  display:inline-flex;
+  flex:none;
+  align-items:center;
+  gap:2px;
+  padding:4px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--surface-strong);
+}
+.language-nav a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:37px;
+  padding:5px 8px;
+  border-radius:999px;
+  color:var(--muted);
+  font-size:.75rem;
+  font-weight:800;
+  line-height:1.25;
+}
+.language-nav a:hover{color:var(--cyan)}
+.language-nav a[aria-current]{background:var(--cyan);color:var(--bg)}
+.language-nav a:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+@media(max-width:760px){
+  .header-inner{display:grid;grid-template-columns:1fr auto}
+  .brand{grid-column:1;grid-row:1}
+  .theme-toggle{grid-column:2;grid-row:1}
+  .language-nav{grid-column:1/-1;grid-row:2;justify-self:start}
+  .main-nav{grid-column:1/-1;grid-row:3;display:flex;flex-wrap:wrap;width:100%}
+}
