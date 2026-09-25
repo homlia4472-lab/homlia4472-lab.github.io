@@ -169,35 +169,70 @@ body{
 @media(prefers-reduced-motion:reduce){.back-link{transition:none}}
 
 /* Each language has its own URL; the selector keeps the current page. */
-.language-nav{
+.site-header{position:relative;z-index:10}
+.language-menu{position:relative;flex:none;font-size:.85rem}
+.language-menu summary{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-height:39px;
+  padding:7px 11px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:var(--surface-strong);
+  color:var(--text);
+  font-weight:750;
+  line-height:1.2;
+  cursor:pointer;
+  list-style:none;
+  user-select:none;
+}
+.language-menu summary::-webkit-details-marker{display:none}
+.language-menu summary:hover,.language-menu[open] summary{border-color:var(--cyan)}
+.language-menu summary:focus-visible,.language-options a:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.language-flag{
   display:inline-flex;
   flex:none;
   align-items:center;
-  gap:2px;
-  padding:4px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  background:var(--surface-strong);
-}
-.language-nav a{
-  display:inline-flex;
-  align-items:center;
   justify-content:center;
-  min-width:37px;
-  padding:5px 8px;
-  border-radius:999px;
-  color:var(--muted);
-  font-size:.75rem;
-  font-weight:800;
-  line-height:1.25;
+  width:1.4em;
+  height:1.4em;
+  font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif;
+  font-size:1.16rem;
+  line-height:1;
+  transform:translateY(-2px);
 }
-.language-nav a:hover{color:var(--cyan)}
-.language-nav a[aria-current]{background:var(--cyan);color:var(--bg)}
-.language-nav a:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.language-chevron{margin-left:4px;color:var(--cyan);font-size:1.15rem}
+.language-menu[open] .language-chevron{transform:rotate(180deg)}
+.language-options{
+  position:absolute;
+  z-index:20;
+  top:calc(100% + 8px);
+  right:0;
+  min-width:180px;
+  padding:6px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--panel);
+  box-shadow:0 16px 40px rgba(0,0,0,.28);
+}
+.language-options a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:40px;
+  padding:7px 10px;
+  border-radius:8px;
+  color:var(--text);
+  font-weight:650;
+}
+.language-options a:hover,.language-options a[aria-current]{background:var(--surface);color:var(--cyan)}
+.language-options a[aria-current]::after{content:"✓";margin-left:auto}
 @media(max-width:760px){
   .header-inner{display:grid;grid-template-columns:1fr auto}
   .brand{grid-column:1;grid-row:1}
   .theme-toggle{grid-column:2;grid-row:1}
-  .language-nav{grid-column:1/-1;grid-row:2;justify-self:start}
+  .language-menu{grid-column:1/-1;grid-row:2;justify-self:start}
+  .language-options{left:0;right:auto}
   .main-nav{grid-column:1/-1;grid-row:3;display:flex;flex-wrap:wrap;width:100%}
 }
