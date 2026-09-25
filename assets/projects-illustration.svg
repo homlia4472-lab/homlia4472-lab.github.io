@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="292" viewBox="0 0 450 292" fill="none" role="img" aria-label="Illustration eines noch leeren Projektordners">
+  <defs>
+    <linearGradient id="g" x1="77" y1="97" x2="354" y2="282" gradientUnits="userSpaceOnUse"><stop stop-color="#63E5EB"/><stop offset="1" stop-color="#34879F"/></linearGradient>
+    <linearGradient id="b" x1="106" y1="80" x2="329" y2="240" gradientUnits="userSpaceOnUse"><stop stop-color="#2B5975"/><stop offset="1" stop-color="#172B48"/></linearGradient>
+    <filter id="shadow" x="0" y="0" width="450" height="292"><feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#07111E" flood-opacity=".46"/></filter>
+  </defs>
+  <circle cx="223" cy="151" r="123" fill="#244D61" opacity=".38"/>
+  <circle cx="223" cy="151" r="103" stroke="#6DD9E6" stroke-opacity=".18"/>
+  <path d="M49 210c63-44 116-54 181-30 69 25 113 18 172-32" stroke="#88DCE6" stroke-opacity=".26" stroke-width="2" stroke-dasharray="5 8"/>
+  <g filter="url(#shadow)">
+    <rect x="104" y="56" width="238" height="146" rx="18" fill="url(#b)" stroke="#76D9E6" stroke-opacity=".55" stroke-width="2"/>
+    <rect x="121" y="76" width="204" height="108" rx="10" fill="#11243C"/>
+    <circle cx="135" cy="90" r="3" fill="#FFBC8A"/><circle cx="146" cy="90" r="3" fill="#B2F6D2"/><circle cx="157" cy="90" r="3" fill="#60E1E9"/>
+    <path d="m152 127-18 13 18 13m142-26 18 13-18 13m-81 17 22-59" stroke="#91E8EA" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M88 202c0-8 6-14 14-14h59l13 14h163c8 0 14 6 14 14v12c0 12-9 21-21 21H109c-12 0-21-9-21-21v-26Z" fill="url(#g)" stroke="#B3F7EA" stroke-width="2"/>
+    <path d="M88 217h263" stroke="#C8FFFF" stroke-opacity=".44"/>
+  </g>
+  <path d="m365 75 2-10 2 10 10 2-10 2-2 10-2-10-10-2 10-2Z" fill="#FFBC8A"/>
+  <circle cx="86" cy="85" r="5" fill="#B2F6D2"/><circle cx="377" cy="209" r="4" fill="#80E2EA"/>
+</svg>

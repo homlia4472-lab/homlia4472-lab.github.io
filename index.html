@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mykyta Homlia – Portfolio</title>
+  <meta name="description" content="Der persönliche Hub von Mykyta Homlia: Informationen, Projekte und Kontakt.">
+  <title>Mykyta Homlia · Hub</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
-
 <body>
-  <nav>
-    <a href="./index.html">Startseite</a>
-    <a href="./projekte.html">Projekte</a>
-  </nav>
-  <h1>Mykyta Homlia</h1>
-  <p>Willkommen auf meiner Website. Hier stelle ich mich und meine Projekte vor.</p>
-</body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./index.html" aria-label="Mykyta Homlia, Startseite"><span class="brand-mark">MH</span><span>Mykyta Homlia</span></a>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <a aria-current="page" href="./index.html">Startseite</a>
+        <a href="./ueber-mich.html">Über mich</a>
+        <a href="./projekte.html">Projekte</a>
+      </nav>
+    </div>
+  </header>
 
+  <main id="inhalt">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Mein persönlicher Hub</p>
+        <h1 id="hero-title">Hallo, ich bin <span>Mykyta.</span></h1>
+        <p class="lead">Hier sammle ich Informationen über mich, meine Arbeit und die Projekte, an denen ich lerne und wachse.</p>
+        <a class="text-link" href="./ueber-mich.html">Mehr über mich <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-grid"></div><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-card"><span class="art-symbol">&lt;/&gt;</span><span class="art-caption">Ideen · Code · Entwicklung</span></div>
+        <span class="art-spark spark-one">✦</span><span class="art-spark spark-two">✳</span>
+      </div>
+    </section>
+
+    <section class="wrap sections" aria-labelledby="explore-title">
+      <div class="section-heading"><p class="eyebrow">Wegweiser</p><h2 id="explore-title">Was möchtest du entdecken?</h2></div>
+      <div class="card-grid">
+        <a class="feature-card" href="./ueber-mich.html">
+          <span class="card-icon about-icon" aria-hidden="true">01</span>
+          <span class="card-title">Über mich <span aria-hidden="true">↗</span></span>
+          <span class="card-description">Mein Hintergrund, meine Kenntnisse und später auch mein Lebenslauf und ausgewählte Dokumente.</span>
+          <span class="card-footer">Mehr erfahren</span>
+        </a>
+        <a class="feature-card" href="./projekte.html">
+          <span class="card-icon project-icon" aria-hidden="true">02</span>
+          <span class="card-title">Projekte <span aria-hidden="true">↗</span></span>
+          <span class="card-description">Eine Sammlung meiner zukünftigen Projekte aus der Webentwicklung und anderen Bereichen.</span>
+          <span class="card-footer">Zur Projektübersicht</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Mykyta Homlia</span><span>Kontakt: <a href="https://github.com/homlia4472-lab">GitHub <span aria-hidden="true">↗</span></a></span></div></footer>
+</body>
 </html>
