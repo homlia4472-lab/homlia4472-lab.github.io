@@ -1,6 +1,8 @@
 const themeButton = document.querySelector('.theme-toggle');
 
 function updateThemeButton() {
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) themeColor.content = document.documentElement.dataset.theme === 'light' ? '#f9f3e9' : '#0b1020';
   if (!themeButton) return;
   const isLight = document.documentElement.dataset.theme === 'light';
   themeButton.textContent = isLight ? '☾ Dunkel' : '☀ Hell';

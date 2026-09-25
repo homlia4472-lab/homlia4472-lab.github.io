@@ -149,3 +149,21 @@ body{
 }
 @media(max-width:420px){.brand{font-size:.9rem}.main-nav{gap:12px}.main-nav a{font-size:.82rem}.theme-toggle{min-width:auto;padding-inline:10px}}
 @media(prefers-reduced-motion:reduce){.contact-card{transition:none}}
+
+/* Clear navigation back from inner pages in both color themes. */
+.back-link{
+  display:inline-flex;
+  align-items:center;
+  min-height:48px;
+  padding:11px 18px;
+  border:2px solid var(--cyan);
+  border-radius:12px;
+  background:var(--surface-strong);
+  color:var(--cyan);
+  box-shadow:0 8px 20px rgba(0,0,0,.16);
+  font-weight:800;
+  transition:background .2s,color .2s,transform .2s;
+}
+.back-link:hover{background:var(--cyan);color:var(--bg);transform:translateY(-2px)}
+.back-link:focus-visible{outline:3px solid var(--text);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.back-link{transition:none}}
