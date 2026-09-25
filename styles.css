@@ -232,14 +232,22 @@ body{
 }
 .language-options a:hover,.language-options a[aria-current]{background:var(--surface);color:var(--cyan)}
 .language-options a[aria-current]::after{content:"✓";margin-left:auto}
-@media(max-width:760px){
-  .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:8px}
-  .brand{grid-column:1;grid-row:1;min-width:0;gap:8px;white-space:normal;font-size:clamp(.78rem,3.5vw,.95rem);line-height:1.15}
-  .brand-mark{flex:none;width:32px;height:32px}
-  .language-menu{grid-column:2;grid-row:1;justify-self:end}
-  .theme-toggle{grid-column:3;grid-row:1;justify-self:end;min-width:44px;min-height:44px;padding:8px;border:2px solid var(--cyan)}
-  .theme-toggle .theme-text{display:none}
-  .language-menu summary{min-width:48px;min-height:44px;justify-content:center;border:2px solid var(--cyan)}
-  .language-options{left:auto;right:0}
+/* Keep language and theme controls together at every viewport width. */
+.header-controls{display:flex;align-items:center;gap:8px;flex:none;margin-left:auto}
+.brand-logo{display:block;width:44px;height:44px;flex:none;object-fit:contain;border-radius:12px;background:#fcfbf7}
+.header-controls .theme-toggle,.header-controls .language-menu summary{min-height:44px;border:2px solid var(--cyan)}
+@media(max-width:900px){
+  .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px}
+  .brand{grid-column:1;grid-row:1;min-width:0;white-space:normal;line-height:1.2}
+  .header-controls{grid-column:2;grid-row:1;margin-left:0}
   .main-nav{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;width:100%}
+}
+@media(max-width:760px){
+  .header-inner{gap:8px}
+  .brand{gap:8px;font-size:clamp(.78rem,3.5vw,.95rem)}
+  .brand-logo{width:36px;height:36px;border-radius:10px}
+  .theme-toggle{min-width:44px;padding:8px}
+  .theme-toggle .theme-text{display:none}
+  .language-menu summary{min-width:48px;justify-content:center}
+  .language-options{left:auto;right:0}
 }
