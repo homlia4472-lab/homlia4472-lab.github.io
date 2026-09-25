@@ -62,3 +62,90 @@ h1,h2{line-height:1.12;letter-spacing:-.045em}
 @media(max-width:760px){.header-inner{align-items:flex-start;flex-direction:column;justify-content:center;padding-block:17px;gap:13px}.main-nav{gap:21px}.hero{grid-template-columns:1fr;padding-block:64px;gap:35px}.hero-art{min-height:290px}.art-card{inset:50px 55px}.sections{padding-bottom:75px}.card-grid,.info-layout,.empty-state{grid-template-columns:1fr}.feature-card,.info-panel{min-height:unset}.empty-state{gap:0;padding:25px 25px 40px}.empty-state img{max-width:360px;margin:auto}.inner-page{padding-block:60px 80px}}
 @media(max-width:420px){.wrap{width:min(100% - 32px,1120px)}.main-nav{gap:14px}.main-nav a{font-size:.84rem}.hero h1{font-size:3.25rem}.hero-art{min-height:250px}.art-card{inset:45px 34px}.footer-inner{flex-direction:column;gap:5px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.feature-card,.button-link{transition:none}}
+
+/* Two wallpaper themes. Opaque surfaces keep the detailed pattern behind the text. */
+:root[data-theme="dark"]{
+  --wallpaper:url("./assets/background-dark.webp");
+  --veil:rgba(8,13,25,.12);
+  --surface:rgba(12,19,34,.94);
+  --surface-strong:rgba(13,21,38,.97);
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f9f3e9;--panel:#fffaf2;--line:#d6c9bc;
+  --text:#152b37;--muted:#3f5360;--cyan:#075d6d;
+  --mint:#175b4f;--orange:#a15118;
+  --wallpaper:url("./assets/background-light.webp");
+  --veil:rgba(255,251,242,.09);
+  --surface:rgba(255,251,244,.94);
+  --surface-strong:rgba(255,251,244,.97);
+}
+body{
+  background-color:var(--bg);
+  background-image:linear-gradient(var(--veil),var(--veil)),var(--wallpaper);
+  background-size:auto,800px 800px;
+  background-repeat:repeat;
+  background-attachment:fixed;
+}
+.site-header,.site-footer{background:var(--surface-strong);backdrop-filter:blur(12px)}
+.hero-copy,.section-heading,.page-intro{
+  padding:28px;
+  margin-left:-28px;
+  border-radius:24px;
+  background:var(--surface);
+  backdrop-filter:blur(12px);
+}
+.feature-card,.info-panel{background:var(--surface-strong)}
+.empty-state{background:var(--surface-strong)}
+.theme-toggle{
+  flex:none;
+  min-width:104px;
+  padding:9px 13px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--surface-strong);
+  color:var(--text);
+  font:700 .84rem/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;
+  cursor:pointer;
+}
+.theme-toggle:hover{border-color:var(--cyan);color:var(--cyan)}
+.theme-toggle:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.contact-card{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  min-height:248px;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:var(--surface-strong);
+  overflow-wrap:anywhere;
+  transition:transform .2s,border-color .2s;
+}
+.contact-card:hover{transform:translateY(-4px);border-color:var(--cyan)}
+.contact-icon{display:grid;place-items:center;width:43px;height:43px;border-radius:12px;background:var(--cyan);color:var(--bg);font-size:1.3rem;font-weight:800}
+.contact-label{margin-top:12px;color:var(--muted);font-size:.84rem}
+.contact-card strong{font-size:1.12rem;line-height:1.35}
+.contact-action{margin-top:auto;padding-top:14px;color:var(--mint);font-size:.9rem;font-weight:750}
+:root[data-theme="light"] .brand-mark{color:#fff}
+:root[data-theme="light"] .about-icon{background:#d7eef0}
+:root[data-theme="light"] .project-icon{background:#f7dec8}
+:root[data-theme="light"] .tags span,:root[data-theme="light"] .soft-label{border-color:#b5ced0;color:#075d6d;background:#e8f3ef}
+:root[data-theme="light"] .button-link{color:#fff}
+:root[data-theme="light"] .button-link:hover{color:#0b2732}
+:root[data-theme="light"] .contact-icon{color:#fff}
+@media(max-width:900px){
+  .header-inner{flex-wrap:wrap;padding-block:16px}
+  .main-nav{order:3;width:100%;gap:26px}
+  .contact-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .header-inner{flex-direction:row;align-items:center;justify-content:space-between;gap:12px}
+  .main-nav{order:3;gap:18px}
+  .hero-copy,.section-heading,.page-intro{padding:20px;margin-left:-20px}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-card{min-height:190px}
+}
+@media(max-width:420px){.brand{font-size:.9rem}.main-nav{gap:12px}.main-nav a{font-size:.82rem}.theme-toggle{min-width:auto;padding-inline:10px}}
+@media(prefers-reduced-motion:reduce){.contact-card{transition:none}}

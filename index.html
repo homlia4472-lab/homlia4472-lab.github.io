@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Der persönliche Hub von Mykyta Homlia: Informationen, Projekte und Kontakt.">
   <title>Mykyta Homlia · Hub</title>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('homlia-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){document.documentElement.dataset.theme='dark'}</script>
   <link rel="stylesheet" href="./styles.css">
+  <script src="./theme.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -15,7 +17,9 @@
         <a aria-current="page" href="./index.html">Startseite</a>
         <a href="./ueber-mich.html">Über mich</a>
         <a href="./projekte.html">Projekte</a>
+        <a href="./kontakt.html">Kontakt</a>
       </nav>
+      <button class="theme-toggle" type="button" aria-label="Farbschema wechseln"></button>
     </div>
   </header>
 
@@ -53,6 +57,6 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Mykyta Homlia</span><span>Kontakt: <a href="https://github.com/homlia4472-lab">GitHub <span aria-hidden="true">↗</span></a></span></div></footer>
+  <footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Mykyta Homlia</span><span><a href="./kontakt.html">Kontakt</a> · <a href="https://github.com/homlia4472-lab">GitHub <span aria-hidden="true">↗</span></a></span></div></footer>
 </body>
 </html>
