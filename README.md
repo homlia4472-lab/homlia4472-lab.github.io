@@ -1,11 +1,11 @@
 # homlia4472-lab.github.io
 
-Personal site in German, English and Ukrainian.
+Persönliche Website auf Deutsch, Englisch und Ukrainisch.
 
-- German: the four HTML files in the root directory.
-- English: matching pages in `en/`.
-- Ukrainian: matching pages in `uk/`.
-- Shared appearance: `styles.css`; theme switch: `theme.js`; images: `assets/`.
+- Deutsch: die vier HTML-Dateien im Hauptverzeichnis.
+- Englisch: die entsprechenden Seiten im Ordner `en/`.
+- Ukrainisch: die entsprechenden Seiten im Ordner `uk/`.
+- Gemeinsames Design: `styles.css`; Wechsel zwischen hellem und dunklem Farbschema: `theme.js`; Bilder: `assets/`.
 
-When editing text, update the corresponding page in all three languages.
-The language selector on each page points to the same section in the other languages.
+Bei Textänderungen bitte die entsprechende Seite in allen drei Sprachen aktualisieren.
+Die Sprachauswahl auf jeder Seite führt zum gleichen Bereich in der gewählten Sprache.
