@@ -1,30 +1,193 @@
 /* Lebenslauf: Stile nur innerhalb der Seite „Über mich“. */
-.cv-page{max-width:960px;overflow-wrap:anywhere}
-.cv-profile{padding:32px;border:1px solid var(--line);border-radius:22px;background:var(--surface-strong)}
-.cv-profile h1{font-size:clamp(2rem,6vw,3.5rem);margin:8px 0 12px}
-.cv-profile .subtitle,.cv-page .date,.cv-page .muted{color:var(--muted)}
-.cv-profile .facts,.cv-profile .contact{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:20px}
-.cv-profile .intro{margin:24px 0 0;max-width:760px}
-.cv-page .contact a,.cv-page .body a{text-decoration:underline;text-underline-offset:4px;color:var(--cyan)}
-.cv-nav{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 20px}
-.cv-nav a,.cv-actions button{border:1px solid var(--cyan);border-radius:12px;background:var(--surface-strong);color:var(--text);padding:10px 14px;min-height:44px;font:inherit;cursor:pointer}
-.cv-nav a:hover,.cv-actions button:hover{color:var(--cyan)}
-.cv-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px}
-.cv-actions[hidden]{display:none}
-.cv-page details{background:var(--surface-strong);border:1px solid var(--line);border-radius:16px;margin:14px 0;scroll-margin-top:20px}
-.cv-page summary{padding:20px 24px;cursor:pointer;min-height:48px}
-.cv-page summary::marker{color:var(--cyan)}
-.cv-page summary h2{display:inline;font-size:1.3rem;letter-spacing:-.02em}
-.cv-page .body{padding:0 24px 24px}
-.cv-page h3{font-size:1.05rem;line-height:1.5;margin:0 0 8px}
-.cv-page .body p{margin:8px 0 16px}
-.cv-page .body ul{padding-left:22px}
-.cv-page .body li+li{margin-top:6px}
-.cv-page .item{display:grid;grid-template-columns:145px minmax(0,1fr);gap:24px;padding:22px 0;border-top:1px solid var(--line)}
-.cv-page .item:last-child{padding-bottom:0}
-.cv-page .date,.cv-page .muted{font-size:.9rem}
-.cv-page .tags{list-style:none;padding:0!important;margin:0 0 20px}
-.cv-page .tags li{padding:6px 12px;border:1px solid var(--line);border-radius:9px;margin:0!important;color:var(--cyan)}
-.cv-page button:focus-visible,.cv-page summary:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
-@media(max-width:600px){.cv-profile{padding:22px}.cv-page .item{grid-template-columns:1fr;gap:8px}.cv-page summary{padding:18px}.cv-page .body{padding:0 18px 20px}.cv-page .body .body{padding-inline:12px}.cv-nav{gap:8px}.cv-nav a{font-size:.9rem;padding:9px 12px}}
-@media print{.site-header,.site-footer,.cv-nav,.cv-actions,.cv-page .back-link{display:none!important}.cv-page{width:100%;padding:0;max-width:none}.cv-page,.cv-page *{background:white!important;color:black!important;box-shadow:none!important}.cv-profile,.cv-page details{border:0}.cv-page .item{break-inside:avoid}.cv-page summary{padding-left:0}.cv-page .body{padding-left:0}}
+.cv-page {
+  max-width: 960px;
+  overflow-wrap: anywhere;
+}
+.cv-profile {
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface-strong);
+}
+.cv-profile h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin: 8px 0 12px;
+}
+.cv-profile .subtitle,
+.cv-page .date,
+.cv-page .muted {
+  color: var(--muted);
+}
+.cv-profile .facts,
+.cv-profile .contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 20px;
+}
+.cv-profile .intro {
+  margin: 24px 0 0;
+  max-width: 760px;
+}
+.cv-page .contact a,
+.cv-page .body a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: var(--cyan);
+}
+.cv-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 26px 0 20px;
+}
+.cv-nav a,
+.cv-actions button {
+  border: 1px solid var(--cyan);
+  border-radius: 12px;
+  background: var(--surface-strong);
+  color: var(--text);
+  padding: 10px 14px;
+  min-height: 44px;
+  font: inherit;
+  cursor: pointer;
+}
+.cv-nav a:hover,
+.cv-actions button:hover {
+  color: var(--cyan);
+}
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+.cv-actions[hidden] {
+  display: none;
+}
+.cv-page details {
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  margin: 14px 0;
+  scroll-margin-top: 20px;
+}
+.cv-page summary {
+  padding: 20px 24px;
+  cursor: pointer;
+  min-height: 48px;
+}
+.cv-page summary::marker {
+  color: var(--cyan);
+}
+.cv-page summary h2 {
+  display: inline;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+.cv-page .body {
+  padding: 0 24px 24px;
+}
+.cv-page h3 {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+.cv-page .body p {
+  margin: 8px 0 16px;
+}
+.cv-page .body ul {
+  padding-left: 22px;
+}
+.cv-page .body li + li {
+  margin-top: 6px;
+}
+.cv-page .item {
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+.cv-page .item:last-child {
+  padding-bottom: 0;
+}
+.cv-page .date,
+.cv-page .muted {
+  font-size: 0.9rem;
+}
+.cv-page .tags {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 0 20px;
+}
+.cv-page .tags li {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  margin: 0 !important;
+  color: var(--cyan);
+}
+.cv-page button:focus-visible,
+.cv-page summary:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 4px;
+}
+@media (max-width: 600px) {
+  .cv-profile {
+    padding: 22px;
+  }
+  .cv-page .item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .cv-page summary {
+    padding: 18px;
+  }
+  .cv-page .body {
+    padding: 0 18px 20px;
+  }
+  .cv-page .body .body {
+    padding-inline: 12px;
+  }
+  .cv-nav {
+    gap: 8px;
+  }
+  .cv-nav a {
+    font-size: 0.9rem;
+    padding: 9px 12px;
+  }
+}
+@media print {
+  .site-header,
+  .site-footer,
+  .cv-nav,
+  .cv-actions,
+  .cv-page .back-link {
+    display: none !important;
+  }
+  .cv-page {
+    width: 100%;
+    padding: 0;
+    max-width: none;
+  }
+  .cv-page,
+  .cv-page * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  .cv-profile,
+  .cv-page details {
+    border: 0;
+  }
+  .cv-page .item {
+    break-inside: avoid;
+  }
+  .cv-page summary {
+    padding-left: 0;
+  }
+  .cv-page .body {
+    padding-left: 0;
+  }
+}
